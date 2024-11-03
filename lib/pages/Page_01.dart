@@ -11,15 +11,15 @@ class _Page01State extends State<Page01> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text(
             'Сторiнка 1',
             style: TextStyle(
-              fontFamily: 'Times_New_Roman',
+              fontFamily: 'Tw Cen',
             ),
           ),
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.lightBlueAccent,
           centerTitle: true,
         ),
         body: Center(
@@ -38,7 +38,7 @@ class _Page01State extends State<Page01> {
                   '<<',
                   style: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                   ),
                 ),
               ),
@@ -54,7 +54,7 @@ class _Page01State extends State<Page01> {
                   'Розрахування вартостi покупки яду(в розробцi)',
                   style: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                   ),
                 ),
               ),
@@ -70,7 +70,7 @@ class _Page01State extends State<Page01> {
                   'Розрахування вартостi продажу яду(в розробцi)',
                   style: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                   ),
                 ),
               ),
@@ -86,7 +86,7 @@ class _Page01State extends State<Page01> {
                   'Календар до гри',
                   style: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                   ),
                 ),
               ),
@@ -102,7 +102,7 @@ class _Page01State extends State<Page01> {
                   'Про програму',
                   style: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                   ),
                 ),
               ),
