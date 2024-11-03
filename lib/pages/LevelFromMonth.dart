@@ -29,7 +29,7 @@ class _LevelFromMonth extends State<LevelFromMonth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           'Розрахування рівня за місяцем та роком',
