@@ -10,11 +10,11 @@ class GameCalendar extends StatefulWidget {
 }
 
 class _GameCalendarState extends State<GameCalendar> {
-  int currentYear = 1001;
+  int currentYear = 2025;
   int currentMonth = 1;
-  DateTime selectedDate = DateTime(1001, 1, 1);
+  DateTime selectedDate = DateTime(2025, 1, 1);
   CalendarFormat _calendarFormat = CalendarFormat.month;
-  DateTime _focusedDay = DateTime(1001, 1, 1);
+  DateTime _focusedDay = DateTime(2025, 1, 1);
   List<DateTime> holidays = [];
 
   final List<String> animals = [
@@ -56,7 +56,7 @@ class _GameCalendarState extends State<GameCalendar> {
   Future<void> _loadLastViewedMonthYear() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final year = prefs.getInt('lastYear') ?? 1001;
+      final year = prefs.getInt('lastYear') ?? 2025;
       final month = prefs.getInt('lastMonth') ?? 1;
       print('Loaded: Year: $year, Month: $month'); // Debugging
       setState(() {
@@ -92,9 +92,11 @@ class _GameCalendarState extends State<GameCalendar> {
     setState(() {
       holidays = [
         DateTime(currentYear, 1, 1),
-        DateTime(currentYear, 5, 9),
+        DateTime(currentYear, 2, 25),
+        DateTime(currentYear, 5, 1),
+        DateTime(currentYear, 5, 8),
         DateTime(currentYear, 6, 28),
-        DateTime(currentYear, 7, 28),
+        DateTime(currentYear, 7, 15),
         DateTime(currentYear, 8, 24),
         DateTime(currentYear, 10, 1),
         DateTime(currentYear, 12, 25),
@@ -109,11 +111,11 @@ class _GameCalendarState extends State<GameCalendar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Календар до гри',
-            style: TextStyle(fontFamily: 'Times_New_Roman')),
-        backgroundColor: Colors.blue,
+            style: TextStyle(fontFamily: 'Tw Cen')),
+        backgroundColor: Colors.lightBlueAccent,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -147,7 +149,7 @@ class _GameCalendarState extends State<GameCalendar> {
                           }
                         }
                       },
-                      style: const TextStyle(fontFamily: 'Times_New_Roman'),
+                      style: const TextStyle(fontFamily: 'Tw Cen'),
                     ),
                   ),
                   Padding(
@@ -172,8 +174,7 @@ class _GameCalendarState extends State<GameCalendar> {
                               'Листопад',
                               'Грудень'
                             ][index],
-                            style:
-                                const TextStyle(fontFamily: 'Times_New_Roman'),
+                            style: const TextStyle(fontFamily: 'Tw Cen'),
                           ),
                         );
                       }),
@@ -195,7 +196,7 @@ class _GameCalendarState extends State<GameCalendar> {
                 '$currentYear - Рiк ${getChineseYear(currentYear)}',
                 style: const TextStyle(
                     fontSize: 18,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                     fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 20),
@@ -217,12 +218,12 @@ class _GameCalendarState extends State<GameCalendar> {
                   ),
                   weekendTextStyle: TextStyle(
                     color: Colors.red,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                     fontSize: 16,
                   ),
                   holidayTextStyle: TextStyle(
                     color: Colors.red,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -234,7 +235,7 @@ class _GameCalendarState extends State<GameCalendar> {
                   titleTextStyle: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                   ),
                   leftChevronIcon:
                       Icon(Icons.chevron_left, color: Colors.black),
@@ -244,12 +245,12 @@ class _GameCalendarState extends State<GameCalendar> {
                 daysOfWeekStyle: const DaysOfWeekStyle(
                   weekdayStyle: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                     fontSize: 13,
                   ),
                   weekendStyle: TextStyle(
                     color: Colors.red,
-                    fontFamily: 'Times_New_Roman',
+                    fontFamily: 'Tw Cen',
                     fontSize: 13,
                   ),
                 ),
@@ -268,8 +269,8 @@ class _GameCalendarState extends State<GameCalendar> {
                               : (isSaturday
                                   ? Colors.grey
                                   : (isSunday ? Colors.red : Colors.black)),
-                          fontFamily: 'Times_New_Roman',
-                          fontSize: 16,
+                          fontFamily: 'Tw Cen',
+                          fontSize: 25,
                         ),
                       ),
                     );
@@ -280,8 +281,8 @@ class _GameCalendarState extends State<GameCalendar> {
                         '$weekNumber',
                         style: const TextStyle(
                           color: Colors.green,
-                          fontFamily: 'Times_New_Roman',
-                          fontSize: 15,
+                          fontFamily: 'Tw Cen',
+                          fontSize: 18,
                         ),
                       ),
                     );
@@ -301,8 +302,8 @@ class _GameCalendarState extends State<GameCalendar> {
                             color: isHolidayDay
                                 ? Colors.white70
                                 : Colors.cyanAccent,
-                            fontFamily: 'Times_New_Roman',
-                            fontSize: 16,
+                            fontFamily: 'Tw Cen',
+                            fontSize: 25,
                           ),
                         ),
                       ),
@@ -322,8 +323,8 @@ class _GameCalendarState extends State<GameCalendar> {
                           style: TextStyle(
                             color:
                                 isHolidayDay ? Colors.white : Colors.cyanAccent,
-                            fontFamily: 'Times_New_Roman',
-                            fontSize: 16,
+                            fontFamily: 'Tw Cen',
+                            fontSize: 25,
                           ),
                         ),
                       ),
