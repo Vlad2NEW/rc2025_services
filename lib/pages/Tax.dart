@@ -9,22 +9,22 @@ class Tax extends StatefulWidget {
 
 class _TaxState extends State<Tax> {
   double balance = 0.0;
-  final percent = 10.0;
-  late String end = 'в';
+  final percent = 15.0;
+  late String end = ' ';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          'Розрахування суми податку у грі 1001+',
+          'Розрахування суми податку у грі RC 2025',
           style: TextStyle(
             fontSize: 14,
-            fontFamily: 'Times_New_Roman',
+            fontFamily: 'Tw Cen',
           ),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.lightBlueAccent,
         centerTitle: true,
       ),
       body: Column(
@@ -32,7 +32,7 @@ class _TaxState extends State<Tax> {
           const Text(
             'Введiть свій баланс на 01.<поточний_місяць>.<поточний_рік>',
             style: TextStyle(
-              fontFamily: 'Times_New_Roman',
+              fontFamily: 'Tw Cen',
             ),
           ),
           TextField(
@@ -41,14 +41,14 @@ class _TaxState extends State<Tax> {
                 balance = double.tryParse(bal) ?? 0.0;
               });
               const TextStyle(
-                fontFamily: 'Times_New_Roman',
+                fontFamily: 'Tw Cen',
               );
             },
           ),
           const Text(
             'Введiть закiнчення числа(буквену частину) ',
             style: TextStyle(
-              fontFamily: 'Times_New_Roman',
+              fontFamily: 'Tw Cen',
             ),
           ),
           TextField(
@@ -57,7 +57,7 @@ class _TaxState extends State<Tax> {
                 end = fin;
               });
               const TextStyle(
-                fontFamily: 'Times_New_Roman',
+                fontFamily: 'Tw Cen',
               );
             },
           ),
@@ -67,22 +67,28 @@ class _TaxState extends State<Tax> {
         backgroundColor: Colors.orange,
         onPressed: () {
           double tax = balance * percent / 100;
+          String sign = '';
           int increment = 0;
           while (tax >= 100000) {
             tax /= 1000;
             increment++;
           }
-          while (tax < 100) {
+          while (tax < 100 && end != '') {
             tax *= 1000;
             increment--;
           }
-          String sign = '';
+
           if (increment > 0) {
             sign = '+$increment';
           } else if (increment == 0) {
             sign = 'без змін';
           } else if (increment < 0) {
-            sign = '$increment';
+            if (end == '') {
+              tax /= 1000;
+              sign = 'без змін';
+            } else {
+              sign = '$increment';
+            }
           }
 
           showDialog(
@@ -92,13 +98,13 @@ class _TaxState extends State<Tax> {
                   title: const Text(
                     'Сума податку',
                     style: TextStyle(
-                      fontFamily: 'Times_New_Roman',
+                      fontFamily: 'Tw Cen',
                     ),
                   ),
                   content: Text(
                     '$tax $end($sign)',
                     style: const TextStyle(
-                      fontFamily: 'Times_New_Roman',
+                      fontFamily: 'Tw Cen',
                     ),
                   ),
                   actions: [
@@ -109,7 +115,7 @@ class _TaxState extends State<Tax> {
                       child: const Text(
                         'Закрити',
                         style: TextStyle(
-                          fontFamily: 'Times_New_Roman',
+                          fontFamily: 'Tw Cen',
                         ),
                       ),
                     ),

@@ -76,9 +76,13 @@ class _MagicCostState extends State<MagicCost> {
             sign = '+$increment';
           } else if (increment == 0) {
             sign = 'без змін';
-          } else if (increment < 0 && sign == '') {
-            cost /= 1000.0;
-            sign = 'без змін';
+          } else if (increment < 0) {
+            if (end == '') {
+              cost /= 1000;
+              sign = 'без змін';
+            } else {
+              sign = '$increment';
+            }
           }
 
           showDialog(

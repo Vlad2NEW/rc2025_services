@@ -104,9 +104,13 @@ class _MagicSellState extends State<MagicSell> {
             sign = '+$increment';
           } else if (increment == 0) {
             sign = 'без змін';
-          } else if (increment < 0 && sign == '') {
-            sell /= 1000.0;
-            sign = 'без змін';
+          } else if (increment < 0) {
+            if (end == '') {
+              sell /= 1000;
+              sign = 'без змін';
+            } else {
+              sign = '$increment';
+            }
           }
           showDialog(
               context: context,
