@@ -12,21 +12,21 @@ class _MagicSellState extends State<MagicSell> {
   double level = 1.0;
   double number = 1.0;
   double maxDigit = 1.0;
-  String end = 'Б';
+  String end = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           'Розрахування вартості продажу магії',
           style: TextStyle(
             fontSize: 14,
-            fontFamily: 'Times_New_Roman',
+            fontFamily: 'Tw Cen',
           ),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.lightBlueAccent,
         centerTitle: true,
       ),
       body: Column(
@@ -34,7 +34,7 @@ class _MagicSellState extends State<MagicSell> {
           const Text(
             'Введiть порядковий номер магії( від 1 до 40)',
             style: TextStyle(
-              fontFamily: 'Times_New_Roman',
+              fontFamily: 'Tw Cen',
             ),
           ),
           TextField(
@@ -47,7 +47,7 @@ class _MagicSellState extends State<MagicSell> {
           const Text(
             'Введiть <рівень> магії (записується в iнвентарi V<рівень>) ',
             style: TextStyle(
-              fontFamily: 'Times_New_Roman',
+              fontFamily: 'Tw Cen',
             ),
           ),
           TextField(
@@ -60,7 +60,7 @@ class _MagicSellState extends State<MagicSell> {
           const Text(
             'Введiть перший розряд числа-нагороди у режимі \'Кампанія\'',
             style: TextStyle(
-              fontFamily: 'Times_New_Roman',
+              fontFamily: 'Tw Cen',
             ),
           ),
           TextField(
@@ -73,7 +73,7 @@ class _MagicSellState extends State<MagicSell> {
           const Text(
             'Введiть закiнчення числа(буквену частину) ',
             style: TextStyle(
-              fontFamily: 'Times_New_Roman',
+              fontFamily: 'Tw Cen',
             ),
           ),
           TextField(
@@ -89,6 +89,7 @@ class _MagicSellState extends State<MagicSell> {
         backgroundColor: Colors.greenAccent,
         onPressed: () {
           int increment = 0;
+          String sign = '';
           double sell = pow(number, level) * maxDigit;
           while (sell >= 100000) {
             sell /= 1000;
@@ -98,13 +99,14 @@ class _MagicSellState extends State<MagicSell> {
             sell *= 1000;
             increment--;
           }
-          String sign = '';
+
           if (increment > 0) {
             sign = '+$increment';
           } else if (increment == 0) {
             sign = 'без змін';
-          } else if (increment < 0) {
-            sign = '$increment';
+          } else if (increment < 0 && sign == '') {
+            sell /= 1000.0;
+            sign = 'без змін';
           }
           showDialog(
               context: context,
@@ -113,13 +115,13 @@ class _MagicSellState extends State<MagicSell> {
                   title: const Text(
                     'Вартiсть продажу',
                     style: TextStyle(
-                      fontFamily: 'Times_New_Roman',
+                      fontFamily: 'Tw Cen',
                     ),
                   ),
                   content: Text(
                     '$sell $end($sign)',
                     style: const TextStyle(
-                      fontFamily: 'Times_New_Roman',
+                      fontFamily: 'Tw Cen',
                     ),
                   ),
                   actions: [
@@ -130,7 +132,7 @@ class _MagicSellState extends State<MagicSell> {
                       child: const Text(
                         'Закрити',
                         style: TextStyle(
-                          fontFamily: 'Times_New_Roman',
+                          fontFamily: 'Tw Cen',
                         ),
                       ),
                     ),
