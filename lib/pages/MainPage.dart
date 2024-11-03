@@ -11,15 +11,15 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          '1001+ Сервіси гри',
+          'Сервіси гри RC 2025',
           style: TextStyle(
-            fontFamily: 'Times_New_Roman',
+            fontFamily: 'Tw Cen',
           ),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.lightBlueAccent,
         centerTitle: true,
       ),
       body: Center(
@@ -38,7 +38,7 @@ class _MainPageState extends State<MainPage> {
                 'Розрахування місяця за заданим рівнем',
                 style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'Times_New_Roman',
+                  fontFamily: 'Tw Cen',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -56,7 +56,7 @@ class _MainPageState extends State<MainPage> {
                 'Розрахування рівня за заданим місяцем',
                 style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'Times_New_Roman',
+                  fontFamily: 'Tw Cen',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -71,10 +71,10 @@ class _MainPageState extends State<MainPage> {
                 backgroundColor: Colors.redAccent,
               ),
               child: const Text(
-                'Розрахування вартості покупки магії у грі 1001+',
+                'Розрахування вартості покупки магії у грі RC 2025',
                 style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'Times_New_Roman',
+                  fontFamily: 'Tw Cen',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -89,10 +89,10 @@ class _MainPageState extends State<MainPage> {
                 backgroundColor: Colors.greenAccent,
               ),
               child: const Text(
-                'Розрахування вартості продажу магії у грі 1001+',
+                'Розрахування вартості продажу магії у грі RC 2025',
                 style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'Times_New_Roman',
+                  fontFamily: 'Tw Cen',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -107,10 +107,10 @@ class _MainPageState extends State<MainPage> {
                 backgroundColor: Colors.orange, // Ваші розміри
               ),
               child: const Text(
-                'Розрахування суми податку у грі 1001+',
+                'Розрахування суми податку у грі RC 2025',
                 style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'Times_New_Roman',
+                  fontFamily: 'Tw Cen',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -128,7 +128,7 @@ class _MainPageState extends State<MainPage> {
                 '>>',
                 style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'Times_New_Roman',
+                  fontFamily: 'Tw Cen',
                 ),
                 textAlign: TextAlign.center,
               ),
