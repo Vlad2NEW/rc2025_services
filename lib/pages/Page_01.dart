@@ -67,7 +67,7 @@ class _Page01State extends State<Page01> {
                   backgroundColor: Colors.lightGreenAccent, // Ваші розміри
                 ),
                 child: const Text(
-                  'Розрахування вартостi продажу яду(в розробцi)',
+                  'Розрахування вартостi продажу яду',
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Tw Cen',
